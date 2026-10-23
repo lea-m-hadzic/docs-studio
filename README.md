@@ -1,11 +1,4 @@
-<h1>
-  <img src="brand/docs-studio-mark.svg"
-       width="55"
-       height="55"
-       align="absmiddle"
-       alt="ARIS.jl icon">
-  docs-studio
-</h1>
+# docs-studio
 
 Generate polished [Zensical](https://zensical.org) documentation sites from one config
 file.
