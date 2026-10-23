@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "docs_studio_version": "0.1.0",
-  "generated_at": "2026-10-23T01:03:03+00:00",
+  "generated_at": "2026-10-23T02:05:22+00:00",
   "files": {
     ".github/workflows/docs.yml": {
-      "sha256": "3ab0cfd9701e700cdc90a55ad1d2df228e0f9532e3599f613c74f4305e3f25bc",
+      "sha256": "39826b6340efa7a92e32391584b2810c569b4c66f223e99fc5e6f0aa68a25d07",
       "ownership": "managed"
     },
     "docs/architecture.md": {

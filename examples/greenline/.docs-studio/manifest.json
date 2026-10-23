@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "docs_studio_version": "0.1.0",
-  "generated_at": "2026-10-23T01:00:31+00:00",
+  "generated_at": "2026-10-23T02:05:23+00:00",
   "files": {
     ".github/workflows/docs.yml": {
-      "sha256": "c69ba67f20d997f673368079a3d03772d238e5e7330826de6910497498794807",
+      "sha256": "9e66c480aa5b68d3649b91f727d4a0bb057b2bcb6c1a923f0914a9c748af92cc",
       "ownership": "managed"
     },
     "docs/adding-a-lane.md": {

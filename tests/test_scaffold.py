@@ -217,6 +217,10 @@ def test_the_workflow_is_manual_only_by_default(project_root: Path):
     assert "docs-studio check" in workflow
     assert "upload-pages-artifact@v5" in workflow and "deploy-pages@v5" in workflow
     assert "${{ steps.deployment.outputs.page_url }}" in workflow
+    # Exactly that, with no stray prefix: GitHub rejects "$${{ ... }}" as an
+    # environment URL and drops the link from the workflow graph.
+    assert "$${{" not in workflow
+    assert "      url: ${{ steps.deployment.outputs.page_url }}\n" in workflow
 
 
 def test_the_workflow_installs_only_what_it_can(project_root: Path):
