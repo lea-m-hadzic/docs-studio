@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Lattice.jl">
+  <title>Lattice.jl</title>
+  <!-- Favicon: the apex node and the two feet, which is all that survives at 16 px. -->
+  <path d="M 16 74 L 48 34 L 80 74" stroke="#6254B8" stroke-width="9" stroke-linecap="round" fill="none"/>
+  <circle cx="16" cy="74" r="9" fill="#25235E"/>
+  <circle cx="80" cy="74" r="9" fill="#25235E"/>
+  <circle cx="48" cy="34" r="11" fill="#F0787F"/>
+</svg>

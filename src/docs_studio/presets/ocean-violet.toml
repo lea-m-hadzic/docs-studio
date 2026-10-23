@@ -1,0 +1,39 @@
+# Ocean / Violet — the wm-physics-eval palette.
+#
+# A single blue-violet accent carries everything interactive; neutrals carry the rest.
+# The accent slot holds the muted amber that site reserved for warnings.
+title = "Ocean / Violet"
+description = "One blue-violet accent on cool neutrals, with a muted amber for warnings."
+md_primary = "white"
+md_primary_dark = "black"
+md_accent = "indigo"
+
+[light]
+primary = "#4B5FD7"
+primary_hover = "#3949AB"
+primary_tint = "#EEF0FF"
+on_primary = "#FFFFFF"
+secondary = "#2A3A8F"
+accent = "#D98A32"
+fg = "#20242A"
+fg_body = "#2F3440"
+muted = "#5D6676"
+border = "#E3E6EA"
+bg = "#FAFAFB"
+surface = "#FFFFFF"
+surface_alt = "#F3F5F7"
+
+[dark]
+primary = "#7E8FFF"
+primary_hover = "#A6B2FF"
+primary_tint = "rgba(126, 143, 255, 0.12)"
+on_primary = "#111418"
+secondary = "#5B6CD9"
+accent = "#E3A24F"
+fg = "#F5F7FA"
+fg_body = "#E6EAF0"
+muted = "#AAB3C2"
+border = "rgba(255, 255, 255, 0.1)"
+bg = "#111418"
+surface = "#171B21"
+surface_alt = "#1F252D"

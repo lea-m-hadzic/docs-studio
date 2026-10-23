@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "docs_studio_version": "0.1.0",
+  "generated_at": "2026-10-23T01:00:29+00:00",
+  "files": {
+    ".github/workflows/docs.yml": {
+      "sha256": "24af53ac32600dbac8189499fd12bd923ae35baa4e4dc7094286794c9c73a374",
+      "ownership": "managed"
+    },
+    "docs/api.md": {
+      "sha256": "ce9f53f25e54813bd1d9f8affe3bdef08cfdbd240bb767ea6ba141a0bbbc7088",
+      "ownership": "seeded"
+    },
+    "docs/assets/lattice-favicon.svg": {
+      "sha256": "bd97a40445ca06ba8e38344add4e5a901c22721b4f103f9c95b5d74c21f3af04",
+      "ownership": "seeded"
+    },
+    "docs/assets/lattice-mark-dark.svg": {
+      "sha256": "b2e2bd7366582998c4658a8b3a4e624d6b69d65f8e16e6f29a7164dbfe799d1b",
+      "ownership": "seeded"
+    },
+    "docs/assets/lattice-mark.svg": {
+      "sha256": "8433101aeb6fa709c77f4ed03c8c01459feba6b14655a2c6829230ef1b5f76ef",
+      "ownership": "seeded"
+    },
+    "docs/certificate.md": {
+      "sha256": "cd4d568a62b5d7de311e4144f5a9b539c726a5e908ff28aa3be694fed04058c4",
+      "ownership": "seeded"
+    },
+    "docs/citation.md": {
+      "sha256": "1cb77d8e8a08c6e60a523a96b80b6d00065b6b4999f4a27319d65d5dbfa8fee5",
+      "ownership": "seeded"
+    },
+    "docs/index.md": {
+      "sha256": "b83ba158aaf98f98eb18b9bd0e5575b0ae6082234e065b198607ad88a8f83ac0",
+      "ownership": "seeded"
+    },
+    "docs/install.md": {
+      "sha256": "ce07033b9c5e3acb294a2f9bb3c813f104939c46741789b2587439995d0cfa1e",
+      "ownership": "seeded"
+    },
+    "docs/lattice-sums.md": {
+      "sha256": "5c9d9754312c2f349cdee6d140fdff87979bf5932e426acac1df8d4bc5a6d7eb",
+      "ownership": "seeded"
+    },
+    "docs/quickstart.md": {
+      "sha256": "8e5e6c5b0d4fcdfc080ebfc25e698fc9be3185a4e7ba2754bdbfc3bb80f5557b",
+      "ownership": "seeded"
+    },
+    "docs/stylesheets/custom.css": {
+      "sha256": "16fc187b1b9ae8f6de50129003f51af50aee4968ce508d2bda52f3ee77c4359a",
+      "ownership": "seeded"
+    },
+    "docs/stylesheets/extra.css": {
+      "sha256": "a4c4cedbcc1f2ac738a69f6a63fddb8f37da2416acf8a18d07d15fd6dd6a860c",
+      "ownership": "managed"
+    },
+    "docs/usage.md": {
+      "sha256": "f57dcf1b69a6742839f982c666dd6a48c1605e75fd5eb0d367aa1c8e61e3332f",
+      "ownership": "seeded"
+    },
+    "zensical.toml": {
+      "sha256": "c7634d4517c10b58a9cc5394c52f22377d32c68c4f987eff6577e583434e06cc",
+      "ownership": "managed"
+    }
+  }
+}

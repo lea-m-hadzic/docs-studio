@@ -1,0 +1,54 @@
+<!-- docs-studio:starter -->
+{% if wordmark_ref %}![{{ project.name }}]({{ wordmark_ref }}){ .ds-wordmark }
+
+{% endif %}# Welcome to {{ project.name }}! { .ds-home-title }
+{% if resources %}
+{% for r in resources %}{% if r.icon %}[:{{ r.icon }}: {{ r.label }}]({{ r.url }}){ .md-button aria-label="{{ r.label }}" }
+{% else %}[![]({{ r.image }}){ .ds-resource-logo width="18" height="18" } {{ r.label }}]({{ r.url }}){ .md-button aria-label="{{ r.label }}" }
+{% endif %}{% endfor %}{ .ds-resources }
+{% endif %}
+**{{ project.description }}**
+
+{{ project.name }} is …  — replace this paragraph with two or three sentences saying what
+the project does, who it is for, and what it is *not*. The reference sites both do this
+on the home page and nothing else on the site repeats it.
+
+Developed by {{ project.author }}.
+
+[Quickstart](quickstart.md){ .md-button .md-button--primary }
+[Installation](install.md){ .md-button }
+
+```{{ lang.fence }}
+{{ lang.hello }}
+```
+
+!!! info "This page is a starter"
+    `docs-studio` generated the structure and the styling. The words are yours: the
+    summary above, the example, and the cards below. `docs-studio check` lists every
+    page that still carries this notice.
+
+## What it gives you
+
+<div class="grid cards" markdown>
+
+-   **First capability**
+
+    ---
+
+    One short paragraph on the first thing a reader gets, ending in a link to the page
+    that explains it. See {{ link("Usage", "usage.md") }}.
+
+-   **Second capability**
+
+    ---
+
+    The same for the second. Two cards read better than four; the reference sites use
+    exactly two.
+    See {{ link("Reference", reference_page) }}.
+
+</div>
+
+## Where to go next
+
+{% for label, page in next_links %}- [{{ label }}]({{ page }}): one line on what the reader finds there.
+{% endfor %}

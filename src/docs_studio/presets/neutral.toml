@@ -1,0 +1,40 @@
+# Neutral — no brand colour of its own.
+#
+# A desaturated slate carries links and interactive state, with a quiet sage accent.
+# The starting point for a project that has no palette yet, or one that wants the
+# layout and typography of the reference sites without their colour.
+title = "Neutral"
+description = "Desaturated slate links on warm-grey neutrals, with a quiet sage accent."
+md_primary = "white"
+md_primary_dark = "black"
+md_accent = "blue grey"
+
+[light]
+primary = "#3D4F66"
+primary_hover = "#2C3A4D"
+primary_tint = "#EEF1F5"
+on_primary = "#FFFFFF"
+secondary = "#1E2733"
+accent = "#4F7D6E"
+fg = "#15191F"
+fg_body = "#2A3038"
+muted = "#5A6370"
+border = "#E2E5EA"
+bg = "#FBFBFC"
+surface = "#FFFFFF"
+surface_alt = "#F3F4F6"
+
+[dark]
+primary = "#9FB4CC"
+primary_hover = "#BFD0E2"
+primary_tint = "rgba(159, 180, 204, 0.14)"
+on_primary = "#12161B"
+secondary = "#7C93AE"
+accent = "#8FBCAE"
+fg = "#F4F6F8"
+fg_body = "#E4E8ED"
+muted = "#A6AEB9"
+border = "rgba(255, 255, 255, 0.1)"
+bg = "#12161B"
+surface = "#191E25"
+surface_alt = "#222831"

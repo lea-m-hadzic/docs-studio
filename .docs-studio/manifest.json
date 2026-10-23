@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "docs_studio_version": "0.1.0",
+  "generated_at": "2026-10-23T01:03:03+00:00",
+  "files": {
+    ".github/workflows/docs.yml": {
+      "sha256": "3ab0cfd9701e700cdc90a55ad1d2df228e0f9532e3599f613c74f4305e3f25bc",
+      "ownership": "managed"
+    },
+    "docs/architecture.md": {
+      "sha256": "07400ab0040c7cedfa2f94b4abcd02aead13bc57056f04ab91990c7cf7f97824",
+      "ownership": "seeded"
+    },
+    "docs/assets/docs-studio-favicon.svg": {
+      "sha256": "5cefa67f7e981b6d26f8fa2694fc87547c1b1a243dbd3c79261ec8a6a3629d48",
+      "ownership": "seeded"
+    },
+    "docs/assets/docs-studio-mark-dark.svg": {
+      "sha256": "191c20525202d118d24dff836a2cc5e4e183a7cf8115589766344e1288d2f111",
+      "ownership": "seeded"
+    },
+    "docs/assets/docs-studio-mark.svg": {
+      "sha256": "f735ddf6652ec421b7b3705a2d8b804d4ac880114213ce4e33219c24b38868ee",
+      "ownership": "seeded"
+    },
+    "docs/attribution.md": {
+      "sha256": "24d7a63f5e6cccee7f858f6db6dc8ee12d5fc9bb40fefc90fd8bb625f9587b68",
+      "ownership": "seeded"
+    },
+    "docs/branding.md": {
+      "sha256": "193ce10114e977a1e3301ca5385646fd643112cb3abd61b1e4eb0bbee742d823",
+      "ownership": "seeded"
+    },
+    "docs/check.md": {
+      "sha256": "8cc932fd37ebe7147900ed49d15a8afac26df024c330eee529da5df539919f61",
+      "ownership": "seeded"
+    },
+    "docs/comparative-analysis.md": {
+      "sha256": "098d4a32fa56e5a4e92619088f5ceaa24896fc1cfca55ccdfccfcf0de4946124",
+      "ownership": "seeded"
+    },
+    "docs/configuration.md": {
+      "sha256": "0f301a91593e837959033e394633dfa87cbb7865560fa7fc63eb5fb27a5543ba",
+      "ownership": "seeded"
+    },
+    "docs/contributing.md": {
+      "sha256": "7dd78ff53a2dccec598307a39f3eb3ef9a4e0b8d0a44975784aab84149c14fa8",
+      "ownership": "seeded"
+    },
+    "docs/deployment.md": {
+      "sha256": "4c525e563eb9907a008c377001a18b7f1d732bf6f53f743d7bc12e7ded220bde",
+      "ownership": "seeded"
+    },
+    "docs/examples.md": {
+      "sha256": "9d8ae30410bfc8e79123284b3f6098c0d5bb6ef66b963f427afe43a3a147566a",
+      "ownership": "seeded"
+    },
+    "docs/index.md": {
+      "sha256": "902283e3db3d5108c1f98c047b29c68b3dd4a9defc44d6d1418eaafb5a1e984a",
+      "ownership": "seeded"
+    },
+    "docs/init.md": {
+      "sha256": "cfe6a4f7e67e4275184b57df759c66a51568efb5ca151bc925eda083e74b78db",
+      "ownership": "seeded"
+    },
+    "docs/install.md": {
+      "sha256": "063e974416b1d08f35404b32e33968379021840ca72219964e3ff050b754e0f2",
+      "ownership": "seeded"
+    },
+    "docs/ownership.md": {
+      "sha256": "8f2a87f3df6188298609ca537ccde4ee80b209000d453505c553de5844eab41f",
+      "ownership": "seeded"
+    },
+    "docs/palettes.md": {
+      "sha256": "b7575b5cb720e89aa724910e838511b64d3627c057786c0d36026ee80f6e56bb",
+      "ownership": "seeded"
+    },
+    "docs/presets.md": {
+      "sha256": "9efae37777f1019442183d3e88897d620c0b84c0374332feb70a296a0f6dad09",
+      "ownership": "seeded"
+    },
+    "docs/quickstart.md": {
+      "sha256": "c16088fa88e2d17cfff2e837b0fcbdc2cc7ef0800eb5e96d58bfc2eea8c0c5c4",
+      "ownership": "seeded"
+    },
+    "docs/stylesheets/custom.css": {
+      "sha256": "d90ed128015a8b1858fd36909228ec17cf22ef2074042fb06d544903c0f02880",
+      "ownership": "seeded"
+    },
+    "docs/stylesheets/extra.css": {
+      "sha256": "f6024cab730c95db4ea8664e7daaa39ef6d9f90a52ff04503f657f6e653d85b0",
+      "ownership": "managed"
+    },
+    "docs/update.md": {
+      "sha256": "d5955e3afe11f816552c7c0fc319e36166049a10485157a9ce87bd69eb55fb82",
+      "ownership": "seeded"
+    },
+    "docs/updating.md": {
+      "sha256": "9cf083a8b09c520afbad6867044195550d30fd1c95049614b7f1546d3d897380",
+      "ownership": "seeded"
+    },
+    "docs/validation.md": {
+      "sha256": "9004a0f96114fc3af4f9c78283ef14aa8a744cfa534b800befd63353fe9dd667",
+      "ownership": "seeded"
+    },
+    "zensical.toml": {
+      "sha256": "1658360b7a5a4146c4d88b2b866f4cdbf333ebf797c9c0af94941dfd4833c6a3",
+      "ownership": "managed"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+/* Lattice.jl — your stylesheet. This file belongs to you.
+ *
+ * docs-studio generates it once and never touches it again: `docs-studio update`
+ * records it as yours, so editing it is not a conflict, and changing the palette,
+ * the templates or the toolkit version leaves it exactly as you left it.
+ *
+ * It loads AFTER docs/stylesheets/extra.css, so anything here wins at equal
+ * specificity. Put additions and overrides here rather than in extra.css, which is
+ * managed and would report your edit as a conflict.
+ *
+ * The design tokens are already defined for both colour schemes, so prefer them over
+ * literal colours and your additions will follow light and dark on their own:
+ *
+ *   --ds-primary        --ds-primary-hover   --ds-primary-tint    --ds-on-primary
+ *   --ds-secondary      --ds-accent          --ds-accent-text     --ds-accent-tint
+ *   --ds-fg             --ds-fg-body         --ds-muted           --ds-border
+ *   --ds-bg             --ds-surface         --ds-surface-alt     --ds-link
+ *
+ * For example:
+ *
+ *   .md-typeset .lead {
+ *     color: var(--ds-muted);
+ *     font-size: 0.9rem;
+ *   }
+ *
+ *   [data-md-color-scheme="slate"] .md-typeset .lead {
+ *     color: var(--ds-fg-body);
+ *   }
+ */

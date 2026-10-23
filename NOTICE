@@ -1,0 +1,152 @@
+docs-studio
+Copyright (c) 2026 Lea M. Hadzic
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+file except in compliance with the License. You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under
+the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied. See the License for the specific language governing
+permissions and limitations under the License.
+
+
+================================================================================
+1. Material derived from sisl/ARIS.jl  (MIT)
+================================================================================
+
+    Source:  https://github.com/sisl/ARIS.jl
+    License: MIT — full text in LICENSES/MIT-ARIS.jl.txt
+
+The copyright notice of that software, reproduced verbatim as its license requires:
+
+    Copyright (c) 2025 hdelecki <hdelecki@stanford.edu> and contributors
+
+The MIT license grants the right to use, copy, modify, merge, publish, distribute,
+sublicense and sell copies, on the condition that the copyright notice and the
+permission notice are included in all copies or substantial portions. Both are
+reproduced in LICENSES/MIT-ARIS.jl.txt, and the copyright notice is reproduced above
+and in the header of every stylesheet this toolkit generates.
+
+Derived in this project:
+
+  * src/docs_studio/templates/extra.css.jinja — the per-scheme custom-property block,
+    the mapping of those properties onto the theme's --md-* variables (including the
+    doubled [data-md-color-scheme=...][data-md-color-primary] selector), and the
+    button, card, table, admonition, heading-rule, grid, sidebar and home-page rules,
+    all taken from that repository's docs/stylesheets/extra.css.
+
+  * src/docs_studio/presets/indigo-lavender.toml — that site's palette. 19 of its 22
+    colour values are taken verbatim, among them #6254B8, #A79AE4, #25235E, #F0787F
+    and the contrast-corrected #C73C44.
+
+  * src/docs_studio/templates/docs-workflow.yml.jinja — the structure of that
+    repository's .github/workflows/docs.yml. The shared parts are substantially
+    GitHub's own published Pages recipe.
+
+  * src/docs_studio/validation.py — checks carried over from that repository's
+    .github/scripts/check_docs.py: the navigation bijection, internal link and anchor
+    resolution, referenced-asset existence, and assets referenced from CSS. Its
+    Julia-specific checks were not carried over.
+
+
+================================================================================
+2. Material derived from sisl/wm-physics-eval  (Apache-2.0)
+================================================================================
+
+    Source:    https://github.com/sisl/wm-physics-eval
+    License:   Apache License, Version 2.0 — full text in LICENSE
+    Copyright: not stated in that repository. Its LICENSE file carries the unfilled
+               Apache appendix ("Copyright [yyyy] [name of copyright owner]"); its
+               CITATION.cff names "Stanford Intelligent Systems Laboratory" as author
+               and its pyproject.toml names "Lea M. Hadzic". The two are not
+               reconciled upstream, so no single holder is asserted here.
+
+That repository has no NOTICE file, so Apache-2.0 section 4(d) imposes no further
+notice to propagate. Its THIRD_PARTY_NOTICES covers material — an NVIDIA prompt file
+and the Hugging Face logo — that is **not** present in this project.
+
+Derived in this project:
+
+  * src/docs_studio/templates/extra.css.jinja — as in section 1. The two reference
+    stylesheets are the same file with a different custom-property prefix: after
+    normalizing that prefix, 19 of their rules are identical to each other, and 21 of
+    this project's 36 generated rules (58%) are identical to a rule in one of them.
+
+  * src/docs_studio/presets/ocean-violet.toml — that site's palette. 19 of its 22
+    colour values are taken verbatim, among them #4B5FD7, #7E8FFF and #D98A32.
+
+  * src/docs_studio/templates/docs-workflow.yml.jinja — as in section 1.
+
+
+================================================================================
+3. Statement of changes  (Apache-2.0 section 4(b))
+================================================================================
+
+No file from either source is redistributed unchanged. The derived material was
+modified as follows:
+
+  * The two project-specific custom-property prefixes (--aris-* and --wm-*) were
+    replaced by a single --ds-* prefix, and several tokens were renamed:
+    primary-dark -> primary-hover, ink -> fg, text -> fg-body,
+    primary-light -> primary-tint, warning -> accent.
+
+  * Rules specific to one project were removed: ARIS.jl's .aris-math display-equation
+    block was generalized to .ds-math, wm-physics-eval's .wm-flow diagram row was
+    dropped, and its .wm-hf-logo rule was generalized to .ds-resource-logo with no
+    accompanying image.
+
+  * The hard-coded colour values were replaced by template variables and extracted
+    into palette files, and six tokens (primary-tint, accent-text, accent-tint,
+    bg-translucent, link, link-hover) became derived values computed at generation
+    time, with accent-text contrast-corrected automatically.
+
+  * The stylesheet became a Jinja2 template rendered per project, and the whole was
+    reorganized into a generator with a configuration schema, an ownership manifest
+    and an update planner, none of which exist in either source.
+
+  * The workflow template gained a conditional checker step and a configurable
+    trigger, and no longer installs the documented package.
+
+
+================================================================================
+4. Material original to this project
+================================================================================
+
+Written for docs-studio and not derived from either source:
+
+  * all of src/docs_studio/ other than the parts named in sections 1 and 2 — the CLI,
+    the configuration schema, the colour and contrast arithmetic, the asset handling
+    and monogram generator, the ownership manifest, and the update planner;
+  * the neutral and studio-teal palettes;
+  * brand/docs-studio-*.svg and examples/brand/lattice-*.svg;
+  * the documentation under docs/ and the example sites under examples/;
+  * the test suite.
+
+Referenced but not redistributed: Zensical (https://zensical.org) is a pinned
+dependency, not vendored; the simple-*, lucide/* and material/* icon shortcodes in
+generated pages resolve to icons shipped with its theme at build time; no icon or font
+file is included here, and generated sites set font = false and use system fonts.
+
+
+================================================================================
+5. Scope of the copyright line above
+================================================================================
+
+The copyright line at the top of this file covers the material listed in section 4 —
+this project's own contributions. It does not extend to the material in sections 1
+and 2, which remains under the copyright of its respective holders, whose notices are
+reproduced there and in LICENSES/.
+
+The redistribution this project carries out is authorized by the MIT and Apache-2.0
+licenses of those sources, on the conditions set out in sections 1 to 3. No further
+permission is claimed or implied.
+
+================================================================================
+6. Acknowledgments  (not copyright attribution)
+================================================================================
+
+The design language this toolkit generalizes was developed in the documentation sites
+of sisl/ARIS.jl and sisl/wm-physics-eval. The acknowledgment is offered as courtesy;
+the binding attribution is in sections 1 to 3.

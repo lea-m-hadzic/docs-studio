@@ -1,0 +1,42 @@
+# The docs-studio palette. Supplied through theme.palette_file, which is the same
+# path any project takes for a palette of its own.
+#
+# Deep teal carries navigation, links and interactive state; a warm amber is the
+# restrained accent. Deliberately neither of the two sites the design language came
+# from: not ARIS's violet, not wm-physics-eval's blue-violet.
+name = "studio-teal"
+title = "Studio Teal"
+description = "Deep teal on warm neutrals, with amber as a restrained accent."
+md_primary = "white"
+md_primary_dark = "black"
+md_accent = "teal"
+
+[light]
+primary = "#0F6E6B"
+primary_hover = "#0A5350"
+primary_tint = "#EAF4F3"
+on_primary = "#FFFFFF"
+secondary = "#123B3A"
+accent = "#D97A2B"
+fg = "#16211F"
+fg_body = "#2A3634"
+muted = "#596765"
+border = "#E0E6E4"
+bg = "#FBFBFA"
+surface = "#FFFFFF"
+surface_alt = "#F2F5F4"
+
+[dark]
+primary = "#5FC9C0"
+primary_hover = "#8ADBD4"
+primary_tint = "rgba(95, 201, 192, 0.14)"
+on_primary = "#0E1716"
+secondary = "#3E8F89"
+accent = "#E8A75C"
+fg = "#F1F6F5"
+fg_body = "#DDE7E5"
+muted = "#9BABA8"
+border = "rgba(255, 255, 255, 0.1)"
+bg = "#0E1716"
+surface = "#15201F"
+surface_alt = "#1C2827"

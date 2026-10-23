@@ -1,0 +1,43 @@
+# Indigo / Lavender / Coral — the ARIS.jl palette.
+#
+# Violet carries navigation, links and interactive state; lavender is its dark-mode
+# counterpart; indigo is the deep brand tone; coral is a restrained accent, used as a
+# tint and in the logo, never as body text. `accent_text` is the darkened coral the
+# site uses where coral text is unavoidable (plain #F0787F is only 2.7:1 on white).
+title = "Indigo / Lavender / Coral"
+description = "Violet links on a near-white page, lavender in dark mode, coral as a restrained accent."
+md_primary = "white"
+md_primary_dark = "black"
+md_accent = "deep purple"
+
+[light]
+primary = "#6254B8"
+primary_hover = "#4F42A0"
+primary_tint = "#F3F0FC"
+on_primary = "#FFFFFF"
+secondary = "#25235E"
+accent = "#F0787F"
+accent_text = "#C73C44"
+fg = "#1B1A33"
+fg_body = "#2E2C47"
+muted = "#605D7D"
+border = "#E4E0F0"
+bg = "#FBFAFE"
+surface = "#FFFFFF"
+surface_alt = "#F4F3F8"
+
+[dark]
+primary = "#A79AE4"
+primary_hover = "#C3B9F0"
+primary_tint = "rgba(167, 154, 228, 0.14)"
+on_primary = "#14121F"
+secondary = "#8E82D9"
+accent = "#F0787F"
+accent_text = "#F0787F"
+fg = "#F2F0FA"
+fg_body = "#DDD9EE"
+muted = "#A09BBB"
+border = "rgba(255, 255, 255, 0.1)"
+bg = "#14121F"
+surface = "#1B1930"
+surface_alt = "#232038"

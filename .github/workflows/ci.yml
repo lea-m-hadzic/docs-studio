@@ -1,0 +1,99 @@
+# Tests, package build, and the example sites. Runs on every push and pull request.
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
+jobs:
+  test:
+    name: Tests on Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+      - name: The locked environment installs
+        run: uv sync --locked
+      - name: The suite passes, including the Zensical builds
+        run: uv run pytest
+
+  build:
+    name: Package build and a cold install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+      - name: Build the sdist and the wheel
+        run: uv build
+      - name: The wheel carries every template and preset
+        run: |
+          python3 - <<'PY'
+          import glob, sys, zipfile
+          names = set(zipfile.ZipFile(glob.glob("dist/*.whl")[0]).namelist())
+          required = {f"docs_studio/templates/{t}" for t in (
+              "zensical.toml.jinja", "extra.css.jinja", "custom.css.jinja",
+              "docs-workflow.yml.jinja", "docs/index.md.jinja",
+              "docs/quickstart.md.jinja", "docs/install.md.jinja",
+              "docs/usage.md.jinja", "docs/api.md.jinja",
+              "docs/citation.md.jinja", "docs/page.md.jinja",
+          )} | {f"docs_studio/presets/{p}.toml" for p in (
+              "indigo-lavender", "ocean-violet", "neutral")}
+          missing = sorted(required - names)
+          print(f"{len(names)} entries, {len(required)} data files required")
+          sys.exit(f"missing from the wheel: {missing}" if missing else 0)
+          PY
+      # The point of this job: the wheel has to work with no checkout in sight.
+      - name: A cold install generates and validates a site
+        run: |
+          uv venv -p 3.13 /tmp/cold
+          uv pip install -p /tmp/cold "$(echo dist/*.whl)[build]"
+          cd /tmp
+          /tmp/cold/bin/docs-studio --version
+          /tmp/cold/bin/docs-studio presets
+          /tmp/cold/bin/docs-studio init cold-site \
+            --name cold-site --description "Built from the wheel in CI" \
+            --author CI --site-url https://example.github.io/cold-site/ \
+            --preset neutral --yes
+          PATH="/tmp/cold/bin:$PATH" /tmp/cold/bin/docs-studio check --path cold-site
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+
+  examples:
+    name: The example sites build strictly
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+      - run: uv sync --locked
+      - name: Each example checks clean and builds with --strict
+        run: |
+          for site in examples/tidepool examples/Lattice.jl examples/greenline; do
+            echo "::group::$site"
+            uv run docs-studio check --path "$site"
+            echo "::endgroup::"
+          done
+
+  self-docs:
+    name: This project's own site builds strictly
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run docs-studio check

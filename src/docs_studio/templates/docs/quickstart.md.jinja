@@ -1,0 +1,24 @@
+<!-- docs-studio:starter -->
+# Quickstart
+
+The shortest path from nothing to one real result. Keep this page to a single worked
+example that someone can paste and run; anything that needs explaining belongs on
+a guide page of its own.
+
+## Install
+
+{{ link("Installation", "install.md") }} has the full set of requirements.
+
+## A first run
+
+```{{ lang.fence }}
+{{ lang.hello }}
+```
+
+Replace the block above with an example that actually runs. State what it prints, and
+make sure the output shown here is output you have seen — not output you expect.
+
+## What to read next
+
+{% for label, page in next_links if page != "quickstart.md" %}- [{{ label }}]({{ page }}): one line on what the reader finds there.
+{% endfor %}

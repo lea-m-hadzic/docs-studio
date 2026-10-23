@@ -1,0 +1,87 @@
+# docs-studio.toml — the single source of truth for this documentation site.
+#
+# `docs-studio update` regenerates the styling and zensical.toml from this file.
+# Pages under docs/ and artwork under docs/assets/ are yours and are never
+# rewritten. Run `docs-studio check` after any change here.
+
+# The toolkit version that last generated this site.
+docs_studio_version = "0.1.0"
+
+[project]
+name = "tidepool"
+description = "Reproducible sampling and aggregation for long-running measurement runs"
+author = "Example Lab"
+# The published URL. Under GitHub Pages this includes the repository path, and
+# it is what makes assets resolve on a project site.
+site_url = "https://example.github.io/tidepool/"
+repo_url = "https://github.com/example/tidepool"
+# python | julia | generic — picks the starter wording and the extra checks
+language = "python"
+
+[theme]
+# Run `docs-studio presets` to see them. Add a [theme.light] / [theme.dark]
+# table to override individual tokens, or set palette_file for a full palette.
+preset = "ocean-violet"
+
+[branding]
+# Paths relative to this file. An SVG or PNG is copied verbatim — never resized,
+# re-encoded or cropped — and is never overwritten by an update. With no logo,
+# a monogram is generated from the project's initials and the palette.
+# logo = "docs/assets/my-logo.svg"
+# logo_dark = "docs/assets/my-logo-dark.svg"   # optional dark-header variant
+# wordmark = "docs/assets/my-wordmark.svg"     # optional, shown above the home headline
+# favicon = "docs/assets/favicon.ico"
+
+# Compact outlined buttons in the home-page resource row. `icon` is a theme icon
+# shortcode (simple-github, material/file-document-outline, …); use `image` with a
+# path under docs/ for a brand mark the theme does not ship.
+
+[[resources]]
+label = "GitHub Repository"
+url = "https://github.com/example/tidepool"
+icon = "simple-github"
+
+[[resources]]
+label = "Example dataset"
+url = "https://example.org/tidepool-data"
+icon = "material/database-outline"
+
+# The navigation. Every page listed here gets a starter page generated once.
+# `pages` entries may be a filename, or { title = "…", page = "…" } to set the
+# label explicitly.
+
+[[nav]]
+title = "Home"
+page = "index.md"
+
+[[nav]]
+title = "Getting started"
+pages = ["quickstart.md", "install.md"]
+
+[[nav]]
+title = "Guide"
+pages = [
+  { title = "Running a measurement", page = "usage.md" },
+  { title = "Sampling and aggregation", page = "aggregation.md" },
+]
+
+[[nav]]
+title = "Reference"
+pages = [
+  { title = "Python API", page = "api.md" },
+  { title = "Result schemas", page = "schemas.md" },
+]
+
+[[nav]]
+title = "Citation"
+page = "citation.md"
+
+[deploy]
+github_pages = true
+# manual: publish only when someone runs the workflow. push: publish on every
+# push to `branch`. Either way the build is strict, so a broken link fails first.
+trigger = "manual"
+branch = "main"
+python_version = "3.13"
+# Pinned so a published build is reproducible.
+zensical_version = "0.0.67"

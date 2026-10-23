@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "docs-studio"
+version = "0.1.0"
+description = "Generate polished Zensical documentation sites from a single config file"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+# LICENSE is the Apache text; NOTICE carries the attribution the derived
+# material requires; LICENSES/ holds the upstream MIT license in full.
+license-files = ["LICENSE", "NOTICE", "LICENSES/*"]
+authors = [{ name = "SISL" }]
+keywords = ["documentation", "zensical", "static-site", "scaffold"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Documentation",
+  "Topic :: Software Development :: Code Generators",
+]
+dependencies = [
+  "typer>=0.12",
+  "pydantic>=2.7",
+  "jinja2>=3.1",
+]
+
+[project.optional-dependencies]
+# Zensical is what the generated site is built with. It is optional here so that
+# `docs-studio init` and `docs-studio check` work without it; `check` then skips the
+# build step and says so.
+build = ["zensical==0.0.67"]
+
+[project.scripts]
+docs-studio = "docs_studio.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/lea-m-hadzic/docs-studio"
+
+[dependency-groups]
+dev = [
+  "pytest>=8.2",
+  "zensical==0.0.67",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/docs_studio"]
+
+[tool.hatch.build.targets.sdist]
+# The package and its suite. The example sites and their screenshots live in the
+# repository, not in the distribution — they are a few hundred kilobytes of pictures
+# and three sites nobody installing this needs.
+include = ["src", "tests", "README.md", "LICENSE", "NOTICE", "LICENSES"]
+# Root-anchored, with the leading slash: a bare "docs" would also match
+# src/docs_studio/templates/docs/, which holds the page starters.
+exclude = ["/examples", "/docs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

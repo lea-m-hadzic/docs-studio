@@ -1,0 +1,19 @@
+<!-- docs-studio:starter -->
+# Citation
+
+If {{ project.name }} is used in work that is published, say here how it should be
+cited.
+
+!!! warning "Fill this in before publishing"
+    `docs-studio` does not invent citations. Add the real entry below — authors, title,
+    venue, year — and nothing that is not settled. A DOI or an arXiv identifier belongs
+    here only once it exists.
+
+```bibtex
+@software{example_key,
+  author = {{ '{' }}{{ project.author }}{{ '}' }},
+  title  = {{ '{' }}{{ project.name }}{{ '}' }},
+  year   = {20XX},
+  url    = {{ '{' }}{{ project.repo_url or project.site_url }}{{ '}' }}
+}
+```
